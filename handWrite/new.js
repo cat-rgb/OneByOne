@@ -2,7 +2,7 @@ function MyNew(fn, ...args) {
     const obj = Object.assign(fn.prototype)
     const result = fn.call(obj, ...args)
     // 判断返回值是否是对象
-    if(result && typeof result === 'object' || typeof result === 'function') {
+    if(result && (typeof result === 'object' || typeof result === 'function')) {
         return result
     }
     return obj
